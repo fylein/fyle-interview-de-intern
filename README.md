@@ -20,7 +20,7 @@ People love working at Fyle. Check out our Glassdoor reviews [here](https://www.
 Under the `data` directory, you will find 20 `receipt` directories. Each directory has the following files:
 * An image file that corresponds to a receipt (e.g. `data/receipt1/recpu6in7u.jpeg`)
 * OCR output that was obtained by running the receipt through AWS Textract (e.g. `data/receipt1/ocr.json`). You can learn about this file's structure in this document by AWS ([link](https://docs.aws.amazon.com/textract/latest/dg/textract-dg.pdf)).
-* expected.json file that contains the receipt amount that should've been extracted
+* An `expected.json` file that contains the receipt amount that should've been extracted
 
 You'll need to fill in a stub function in extract.py called `extract_amount` that extracts the amount, given the receipt directory. You can choose to extract from the receipt or the ocr.json or combination of both.
 
@@ -40,7 +40,7 @@ Then install all the dependencies.
 Run the tests that validate if your `extract_amount` is working fine against the test data. You can run all the tests using:
 
 ```
-    python -m pytests
+    python -m pytest
 ```
 You will initially see failures. This is expected since the stub function returns a constant 0.0. The output should look like this.
 
