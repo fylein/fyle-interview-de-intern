@@ -1,78 +1,83 @@
-# Fyle Data-Extraction challenge
+# Fyle Data Extraction Challenge
 
-**quote of the day**
-> **"It’s the little things that count."**
+## Who is this for?
 
-#### pre-requisite:
-- don't forget to have fun
- 
+This challenge is meant for candidates who wish to intern at Fyle and work with the ML team. 
 
-### our assumption
-- you are awesome
+* You should be available to start by Sept 7, 2021
+* You should be able to commit to at least 3 months (we strongly prefer 6 months)
 
+## Why intern at Fyle?
 
-## Story board:
-fyle wants you to read this story carefully.
-
-there was a guy named murgan anna, he is pissed off of filing receipts after each spend on behalf of the organization (chillana corp.) that he worked for, as filing of receipts take too long, he needs to get print if its an e-bill, file it, maintain records, get approval on all expenditure, give explanation for each spend and what not, and after doing all this he gets his reimbursement. Can you think of going through this process ?
-
-murgan was totals pissed off and wanted some hassle free solution so he started surfing for such apps in the jungle of apps, and he found  **[`Fyle`](https://www.fylehq.com/)** 😍 (what ? you wanna have a look what fyle is ? click on fyle), and now when he is using fyle for some time his life is smooth as butter file expense on the go, click a pic, sit back relax all the process is automated after that and you get reimbursement in your account 😎
-
-murgan is more greedy now and wants you to make him more lazy, he is asking you to implement a feature that extracts amount directly from the receipt and he don't want to do much of it, to implement that murgan has provided a repo with lot of receipts(murgan is lazy so 20 is a big number for him) inside, also he has done hard work and provided a test script for you to test your implementation isn't that sounds great? so what are you waiting for make murgan happy 😋
+Fyle is a fast-growing Expense Management SaaS product. We are ~40 strong engineering team at the moment. About 60% of our engineers started off as interns. Interns at Fyle do extremely challenging and impactful work.
 
 
------
-
-### here's more from murgan:
-
-##### few steps to follow (murgan is a strick guy):
-- step 1: copy the repo link from here: https://github.com/fylein/data-extraction-test
-- go to your git hub account and click on the `+` on the top right corner to open drop down menu
-- click on `import repository`
-- paste the link in `Your old repository’s clone URL` field
-- choose the best name you can
-- [IMP] make the repo private (don't share it with cheaters, its your hard work)
-- click `begin import` button
-- hurreeyyyyyy,😱 now you are ready with your own repo, and the boiler plate provided by murgan
-- clone it to your work place or wherever you are comfortable (murgan don't interfere in personal matters 😉 )
-- rock the implementation
-
-**Note: please don't make any changes in the code given by murgan, it will lead to disqualification**
-
----
-### About murgans repo (code walk through)
-- `extract_script.py` script is already present in the repo
-- everything is already setup for you
-- there is a function called `extract_amount` you just need to edit that one function
-
-Thank murgan later
+People love working at Fyle. Check out our Glassdoor reviews [here](https://www.glassdoor.co.in/Reviews/Fyle-Reviews-E1723235.htm). You can read stories from our teammates [here](https://stories.fylehq.com).
 
 
----
-### How to run tests
+## Challenge outline
 
-**Note: all the script run on `python 3`**
-- `backtest.py` script is already present in the repo provided by murgan
-- you can simply run the script `python backtest.py`
+Under the `data` directory, you will find 20 `receipt` directories. Each directory has the following files:
+* An image file that corresponds to a receipt (e.g. `data/receipt1/recpu6in7u.jpeg`)
+* OCR output that was obtained by running the receipt through AWS Textract (e.g. `data/receipt1/ocr.json`). You can learn about this file's structure in this document by AWS ([link](https://docs.aws.amazon.com/textract/latest/dg/textract-dg.pdf)).
+* expected.json file that contains the receipt amount that should've been extracted
 
+You'll need to fill in a stub function in extract.py called `extract_amount` that extracts the amount, given the receipt directory. You can choose to extract from the receipt or the ocr.json or combination of both.
 
----> OR <---
-- once you are done with implementation
-- uncomment the below lines in `extract_script.py` in `main` function
+## Local setup
+
+First, clone this repo to your github account (keep it public so it is easy for us to check the submission later). 
+
+Then, clone the repo to your laptop.
+
+This codebase requires Python 3.7+. It is recommended to use virtualenv.
+
+Then install all the dependencies.
 ```
-    # print(Fore.YELLOW + '\n\n hold on, running test set for you')
-    # time.sleep(2)
-    # os.system('python backtest.py')
+    pip install -r requirements.txt
 ```
-- this will run test automatically every time `extract_script.py` extract some data (murgan really cares about you)
 
- ---
- ### how to submit your implementation
+Run the tests that validate if your `extract_amount` is working fine against the test data. You can run all the tests using:
 
- - `IMP` take the screenshot of 100% success run of your extraction script
- -  commit your changes and add the screenshot in the commit comment section
- -  or you can add the screenshot in the repo itself (your choice, murgan wont interfere) but the screenshot should be present
- - now let murgan know that you submitted your implementation by filling this **[`google form`](https://www.fylehq.com/)**
+```
+    python -m pytests
+```
+You will initially see failures. This is expected since the stub function returns a constant 0.0. The output should look like this.
 
+```
+collected 20 items                                                                                                                                                               
 
----
+test_extract.py::test_extract[./data/receipt8] FAILED                                                                                                                      [  5%]
+test_extract.py::test_extract[./data/receipt1] FAILED                                                                                                                      [ 10%]
+test_extract.py::test_extract[./data/receipt6] FAILED                                                                                                                      [ 15%]
+test_extract.py::test_extract[./data/receipt7] FAILED                                                                                                                      [ 20%]
+test_extract.py::test_extract[./data/receipt9] FAILED                                                                                                                      [ 25%]
+...
+```
+
+If you'd like to run the test against a single directory, run it like this:
+
+```
+    python -m pytest test_extract.py::test_extract[./data/receipt1]
+```
+
+## Your task
+
+Your task is to fix up `extract_amount` function so that all the tests pass i.e. amounts in all 20 receipts are extracted correctly. You are free to
+use the receipt image or the AWS Textract output for this purpose - please do not ask us which one to use.
+
+Once all the tests pass locally, take a screenshot of the successful run with 100% tests passing. Commit and push your code to your repository.
+
+Please do not spend more than 3 hours on this task.
+
+## Submission
+
+Once you are done with your task, please use [this form](https://docs.google.com/forms/d/e/1FAIpQLSckGNpY1kbmTd3qFyu4XlMk46229xwNvxYNKjbypB0AlT3CaA/viewform?usp=sf_link) to complete your submission.
+
+## What happens next?
+
+You will hear back within 48 hours from us via email. We may request for some changes based on reviewing your code.
+
+Subsequently, we will schedule a phone interview with a Fyle Engineer.
+
+If that goes well, we'll make an offer. 
