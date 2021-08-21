@@ -74,6 +74,8 @@ If you'd like to run the test against a single directory, run it like this:
     python -m pytest test_extract.py::test_extract[./data/receipt1]
 ```
 
+Once you finish your task successfully, all tests should pass.
+
 ## Submission
 
 Once you are done with your task, please use [this form](https://docs.google.com/forms/d/e/1FAIpQLSckGNpY1kbmTd3qFyu4XlMk46229xwNvxYNKjbypB0AlT3CaA/viewform?usp=sf_link) to complete your submission.
