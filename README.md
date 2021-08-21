@@ -26,7 +26,7 @@ You'll need to fill in a stub function in extract.py called `extract_amount` tha
 
 ## Local setup
 
-First, clone this repo to your github account (keep it public so it is easy for us to check the submission later). 
+First, fork this repo to your github account (keep it public so it is easy for us to check the submission later). 
 
 Then, clone the repo to your laptop.
 
