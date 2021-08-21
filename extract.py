@@ -1,22 +1,18 @@
-from colorama import Fore
-import sys
-import os
-import json
-
-# your import goes here
-import re
-
+# Your imports go here
 
 '''
-    extract_amount
-    input:
-        - dirpath: directory containing receipt and ocr output
+    Given a directory with receipt file and OCR output, this function should extract the amount
+
+    Parameters:
+    dirpath (str): directory path containing receipt and ocr output
     
-    output:
-        - returns the extracted amount
+    Returns:
+    float: returns the extracted amount
 
 '''
 def extract_amount(dirpath: str) -> float:    
+
     # your logic goes here
+
     return 0.0
 
