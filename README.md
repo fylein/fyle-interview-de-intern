@@ -37,6 +37,19 @@ Then install all the dependencies.
     pip install -r requirements.txt
 ```
 
+You're ready to begin your task.
+
+## Your task
+
+Your task is to fix up `extract_amount` function so that all the tests pass i.e. amounts in all 20 receipts are extracted correctly. You are free to
+use the receipt image or the AWS Textract output for this purpose - please do not ask us which one to use.
+
+Once all the tests pass locally, take a screenshot of the successful run with 100% tests passing. Commit and push your code to your repository.
+
+Please do not spend more than 3 hours on this task.
+
+## Running tests
+
 Run the tests that validate if your `extract_amount` is working fine against the test data. You can run all the tests using:
 
 ```
@@ -45,7 +58,7 @@ Run the tests that validate if your `extract_amount` is working fine against the
 You will initially see failures. This is expected since the stub function returns a constant 0.0. The output should look like this.
 
 ```
-collected 20 items                                                                                                                                                               
+collected 20 items                                                                                                                                               
 
 test_extract.py::test_extract[./data/receipt8] FAILED                                                                                                                      [  5%]
 test_extract.py::test_extract[./data/receipt1] FAILED                                                                                                                      [ 10%]
@@ -60,15 +73,6 @@ If you'd like to run the test against a single directory, run it like this:
 ```
     python -m pytest test_extract.py::test_extract[./data/receipt1]
 ```
-
-## Your task
-
-Your task is to fix up `extract_amount` function so that all the tests pass i.e. amounts in all 20 receipts are extracted correctly. You are free to
-use the receipt image or the AWS Textract output for this purpose - please do not ask us which one to use.
-
-Once all the tests pass locally, take a screenshot of the successful run with 100% tests passing. Commit and push your code to your repository.
-
-Please do not spend more than 3 hours on this task.
 
 ## Submission
 
