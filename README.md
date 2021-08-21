@@ -68,6 +68,8 @@ use the receipt image or the AWS Textract output for this purpose - please do no
 
 Once all the tests pass locally, take a screenshot of the successful run with 100% tests passing. Commit and push your code to your repository.
 
+Please do not spend more than 3 hours on this task.
+
 ## Submission
 
 Once you are done with your task, please use [this form](https://docs.google.com/forms/d/e/1FAIpQLSckGNpY1kbmTd3qFyu4XlMk46229xwNvxYNKjbypB0AlT3CaA/viewform?usp=sf_link) to complete your submission.
