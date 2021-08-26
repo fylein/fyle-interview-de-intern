@@ -78,7 +78,7 @@ Once you finish your task successfully, all tests should pass.
 
 ## Submission
 
-Once you are done with your task, please use [this form](https://docs.google.com/forms/d/e/1FAIpQLSckGNpY1kbmTd3qFyu4XlMk46229xwNvxYNKjbypB0AlT3CaA/viewform?usp=sf_link) to complete your submission.
+Once you are done with your task, please use [this form](https://forms.gle/hJAKfXdcdqgUVKfY8) to complete your submission.
 
 ## What happens next?
 
