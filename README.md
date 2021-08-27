@@ -24,6 +24,8 @@ Under the `data` directory, you will find 20 `receipt` directories. Each directo
 
 You'll need to fill in a stub function in extract.py called `extract_amount` that extracts the amount, given the receipt directory. You can choose to extract from the receipt or the ocr.json or combination of both.
 
+Please don't use specific markers in the given receipts in your submission - you need to write a generic solution that works across the test data. You will be disqualified if we see hacks like this.
+
 ## Local setup
 
 First, fork this repo to your github account (keep it public so it is easy for us to check the submission later). 
