@@ -78,6 +78,16 @@ If you'd like to run the test against a single directory, run it like this:
 
 Once you finish your task successfully, all tests should pass.
 
+## Fixing styling
+
+Please run this command to check for any linting errors. You can run this command:
+
+```
+    pylint extract.py
+```
+
+If this shows any warnings or errors, please fix them and commit your changes.
+
 ## Submission
 
 Once you are done with your task, please use [this form](https://forms.gle/hJAKfXdcdqgUVKfY8) to complete your submission.
