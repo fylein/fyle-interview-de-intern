@@ -1,6 +1,7 @@
 # Your imports go here
 import logging
-
+import json
+import re
 logger = logging.getLogger(__name__)
 
 '''
@@ -16,6 +17,21 @@ logger = logging.getLogger(__name__)
 def extract_amount(dirpath: str) -> float:
 
     logger.info('extract_amount called for dir %s', dirpath)
-    # your logic goes here
-
-    return 0.0
+    path='/Users/devkaran/fyle-interview-de-intern'+dirpath[1:]+'/ocr.json'
+    with open(path,'r') as rc:
+            df=json.load(rc)
+    l=[]
+    for j in range(len(df['Blocks'])):
+        try:
+            l.append(df['Blocks'][j]['Text'])
+        except:
+            continue
+    t=" ".join(l)
+    t=re.sub(",","",t)
+    t=re.findall('\d+\.\d+',t)
+    amount=0.0
+    expected_amount=0.0
+    for item in t:
+        amount=float(item)
+        expected_amount=max(amount,expected_amount)
+    return expected_amount
